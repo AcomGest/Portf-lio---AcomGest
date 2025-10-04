@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AcomGest Design System - Veterinary Management Platform */
+
+@layer base {
+  :root {
+    /* Main Brand Colors - Verde principal e Azul tecnológico */
+    --primary: 174 100% 21%;        /* Verde #006D5B */
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 174 100% 35%;
+    --primary-dark: 174 100% 15%;
+    
+    --secondary: 201 82% 24%;       /* Azul #084d6e */
+    --secondary-foreground: 0 0% 98%;
+    --secondary-light: 201 82% 40%;
+    
+    /* Neutral Colors */
+    --background: 0 0% 98%;         /* Fundo neutro #F5F5F5 */
+    --foreground: 0 0% 13%;         /* Preto suave #212121 */
+    
+    --card: 0 0% 100%;              /* Branco #FFFFFF */
+    --card-foreground: 0 0% 13%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 174 50% 95%;
+    --accent-foreground: 174 100% 21%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+    
+    /* Interactive States */
+    --border: 0 0% 90%;
+    --input: 0 0% 100%;
+    --ring: 174 100% 21%;
+    
+    /* Status Colors */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Veterinary Specific */
+    --medical-bg: 174 20% 98%;
+    --data-bg: 201 20% 98%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(174 100% 21%), hsl(174 100% 35%));
+    --gradient-secondary: linear-gradient(135deg, hsl(201 82% 24%), hsl(201 82% 40%));
+    --gradient-medical: linear-gradient(180deg, hsl(174 20% 98%), hsl(0 0% 100%));
+    
+    /* Shadows */
+    --shadow-veterinary: 0 4px 20px -4px hsl(174 100% 21% / 0.15);
+    --shadow-data: 0 4px 20px -4px hsl(201 82% 24% / 0.15);
+    --shadow-elegant: 0 10px 40px -10px hsl(0 0% 0% / 0.1);
+    
+    /* Animations */
+    --transition-medical: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background: hsl(var(--background));
+  }
+  
+  .veterinary-gradient {
+    background: var(--gradient-primary);
+  }
+  
+  .medical-gradient {
+    background: var(--gradient-medical);
+  }
+  
+  .data-gradient {
+    background: var(--gradient-secondary);
+  }
+}
+
+@layer components {
+  .veterinary-shadow {
+    box-shadow: var(--shadow-veterinary);
+  }
+  
+  .data-shadow {
+    box-shadow: var(--shadow-data);
+  }
+  
+  .elegant-shadow {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .medical-transition {
+    transition: var(--transition-medical);
+  }
+  
+  .metric-card {
+    @apply bg-card rounded-xl p-6 veterinary-shadow medical-transition;
+  }
+  
+  .metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elegant);
+  }
+}
